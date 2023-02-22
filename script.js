@@ -5,8 +5,11 @@ keysCheckbox = document.querySelector(".keys-checkbox input");
 let allKeys = [],
 audio = new Audio("tunes/a.wav");
 
+
+///update ..now you can press multiple keys and the sound will play simultaneous without interruptions
 const playTune = (key) => {
-    audio.src = `tunes/${key}.wav`
+    const audio = new Audio(`tunes/${key}.wav`);
+    audio.volume = volumeSlider.value;
     audio.play();
 
     const clickedKey = document.querySelector(`[data-key="${key}"]`)
